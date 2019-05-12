@@ -8,7 +8,7 @@ from io import BytesIO
 # from fastai import *
 from fastai.vision import *
 
-os.environ['TORCH_HOME'] = 'app/models/'
+os.environ['TORCH_HOME'] = 'app/'
 export_file_url = 'https://dl.dropboxusercontent.com/s/b0bdpyxxrzgkma3/export.pth?dl=0'
 export_file_name = 'models/export.pth'
 model_name = 'export'
