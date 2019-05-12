@@ -1,2 +1,2 @@
 app/models/export.pth
-.torch
+app/.torch
