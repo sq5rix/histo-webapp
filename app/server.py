@@ -8,6 +8,7 @@ from io import BytesIO
 # from fastai import *
 from fastai.vision import *
 
+os.environ['TORCH_HOME'] = '.torch/'
 export_file_url = 'https://dl.dropboxusercontent.com/s/b0bdpyxxrzgkma3/export.pth?dl=0'
 export_file_name = 'models/export.pth'
 model_name = 'export'
@@ -30,7 +31,7 @@ async def setup_learner():
     await download_file(export_file_url, path/export_file_name)
     try:
         data = ImageDataBunch.single_from_classes(path, classes, size=96).normalize(imagenet_stats)
-        learn = cnn_learner(data, models.resnet50)
+        learn = cnn_learner(data, models.resnet50, model_dir='models')
         learn.load(model_name)
         return learn
     except RuntimeError as e:
