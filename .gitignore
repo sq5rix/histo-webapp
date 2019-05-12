@@ -1,0 +1,4 @@
+app/view/index.html
+app/static/kofax.tif
+app/models/export-orig.pth
+app/models/export.pth
