@@ -3,7 +3,6 @@ var el = x => document.getElementById(x);
 function showPicker(inputId) { el('file-input').click(); }
 
 function showPicked(input) {
-
     el('upload-label').innerHTML = input.files[0].name;
     var reader = new FileReader();
     reader.onload = function (e) {
@@ -11,7 +10,14 @@ function showPicked(input) {
         el('image-picked').className = '';
     }
     reader.readAsDataURL(input.files[0]);
-    el('result-label').innerHTML = ``;
+    el('result-label').innerHTML = '';
+}
+
+function getExample(imgs){
+    el('upload-label').innerHTML = imgs.id;
+    el('image-picked').src = imgs.src;
+    el('image-picked').className = '';
+    el('result-label').innerHTML = '';
 }
 
 function analyze() {
